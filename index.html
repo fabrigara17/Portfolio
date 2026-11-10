@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fabricio | Portfolio</title>
+  <meta name="description" content="Portfolio web de Fabricio Gara: proyectos de desarrollo de software.">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem("theme"); } catch (e) {}
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", saved || (prefersDark ? "dark" : "light"));
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a href="#inicio" class="logo">Fabricio Garavaglia</a>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar modo oscuro/claro">
+          <span id="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+        <button class="icon-btn nav__burger" id="nav-toggle" type="button"
+                aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="inicio">
+      <div class="hero__text">
+        <h1>Fabricio Garavaglia</h1>
+        <p class="hero__role">Desarrollador <span id="typing" class="typing" aria-live="off"></span><span class="cursor" aria-hidden="true">|</span></p>
+        <p class="hero__desc">
+          Estudiante de desarrollo de software. Me gusta construir sistemas que resuelvan problemas reales,
+          entender cómo funciona todo por debajo y aprender haciendo.
+        </p>
+        <div class="hero__cta">
+          <a href="#proyectos" class="btn btn--primary">Ver proyectos</a>
+          <a href="#contacto" class="btn btn--ghost">Contactame</a>
+        </div>
+      </div>
+
+      <div class="hero__avatar" aria-hidden="true">
+
+        <div class="avatar">TN</div>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="sobre-mi">
+      <h2 class="section__title">Sobre mí</h2>
+      <div class="about">
+        <div>
+          <h3 class="about__sub">Tecnologías favoritas</h3>
+          <ul class="chips">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Linux</li>
+            <li>Git / GitHub</li>
+            <li>Python</li>
+            <li>Vue</li>
+            <li>Tailwind</li>
+            <li>Android Studio</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="proyectos">
+      <h2 class="section__title">Proyectos</h2>
+
+      <div class="grid">
+
+        <article class="card card--featured reveal">
+          <span class="badge">Proyecto Final</span>
+          <div class="card__thumb" aria-hidden="true">📒</div>
+          <h3 class="card__title">Libreta Digital</h3>
+          <p class="card__subtitle">Nació para digitalizar la gestión escolar: notas y asistencias en un solo lugar.</p>
+          <ul class="card__list">
+            <li>Carga de calificaciones por docente, según las materias que tiene asignadas.</li>
+            <li>Los alumnos ven sus notas desde el apartado de desempeño.</li>
+            <li>Conducción habilita en qué períodos se pueden modificar las notas.</li>
+            <li>Asistencias con presente, ausente, llegada tarde y retiro anticipado, por materia.</li>
+          </ul>
+          <div class="card__links">
+            <a href="#" class="btn btn--small btn--primary" target="_blank" rel="noopener">Ver demo</a>   <!-- TODO -->
+            <a href="#" class="btn btn--small btn--ghost" target="_blank" rel="noopener">Código</a>      <!-- TODO -->
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__thumb" aria-hidden="true">🏎️</div>
+          <h3 class="card__title">Juego de F1</h3>
+          <p class="card__subtitle">Nació de mi pasión por la Fórmula 1 y las ganas de programar un juego propio.</p>
+          <ul class="card__list">
+            <li>TODO: describí cómo se juega y qué tecnologías usaste.</li>
+            <li>TODO: mecánica principal (carrera, vueltas, puntajes, etc.).</li>
+          </ul>
+          <div class="card__links">
+            <a href="#" class="btn btn--small btn--primary" target="_blank" rel="noopener">Jugar</a>     <!-- TODO -->
+            <a href="#" class="btn btn--small btn--ghost" target="_blank" rel="noopener">Código</a>      <!-- TODO -->
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__thumb" aria-hidden="true">🐧</div>
+          <h3 class="card__title">Arch Linux en mi notebook</h3>
+          <p class="card__subtitle">Entusiasta de la ciberseguridad.</p>
+          <ul class="card__list">
+            <li>Instalación con <code>archinstall</code> en dual boot con Windows, bootloader GRUB.</li>
+            <li>Particionado del NVMe y configuración de NetworkManager.</li>
+            <li>Entorno con Hyprland y Kitty.</li>
+            <li>Uso de OpenCode en la terminal para asistir la configuración del sistema.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section container reveal" id="contacto">
+      <h2 class="section__title">Contacto</h2>
+      <p class="contact__text">¿Tenés un proyecto, pasantía o propuesta? Escribime.</p>
+      <div class="contact__links">
+        <a class="btn btn--primary" href="mailto:TODO@correo.com">Email</a>
+        <a class="btn btn--ghost" href="https://github.com/fabrigara17/" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn--ghost" href="www.linkedin.com/in/fabri-gara-000b06399" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> TODO Tu Nombre. Hecho con HTML, CSS y JavaScript.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
